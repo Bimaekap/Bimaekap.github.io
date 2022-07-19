@@ -32,7 +32,11 @@ const getInside = async () => {
         mode: 'no-cors',
         client_id: CLIENT_ID,
     })
-    console.log(window)
+    let baseUrl = window.location.href
+    if(baseUrl.toString().includes("https://bimaekap.github.io/?code="){
+       console.log(baseUrl);
+       }
+    
 
 }
 
