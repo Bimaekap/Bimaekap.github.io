@@ -5,9 +5,6 @@ export function getTokenInvoke() {
 }
 
 //step 2
-export function getTokenInvoke_two() {
-    return verifier_step_two;
-}
 
 // STEP 1
 
