@@ -11,8 +11,7 @@ const getAPI = async () => {
         mode:'no-cors',
         credentials:'include',
         headers:new Headers({
-            'X-MAL-CLIENT-ID':'9e04967f457b1e0951e3faadc808a242',
-            'Authrization': myToken,      
+            'X-MAL-CLIENT-ID':'9e04967f457b1e0951e3faadc808a242',    
         })
     })
 }
