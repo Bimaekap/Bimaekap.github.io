@@ -41,18 +41,12 @@ const getToken = async () => {
         method: 'POST',
         client_id: CLIENT_ID,
         mode: 'no-cors',
-        state: 'http://127.0.0.1:5500/index.html',
+        state: 'https://bimaekap.github.io/docs',
         client_secret: CLIENT_SECRET,
         grant_type: 'authorization_code',
         code: 'authorization_code',
-        redirect_url: 'http://127.0.0.1:5500/index.html',
+        redirect_url: 'https://bimaekap.github.io/docs',
         code_verifier: getTokenInvoke(),
     })
-
-    const token_url = await response_url.text()
-    console.log(token_url)
-    const tokenAdd = getTokenInvoke()
-    const token = await tokenAdd.text()
-    console.log(token)
     
 }
