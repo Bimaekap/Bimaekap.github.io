@@ -5,8 +5,6 @@ import { generateNewToken } from "./dist/generate_new_token.js";
 import { token } from "./dist/get_new_code_verifier.js";
 const api_url = 'https://api.myanimelist.net/v2/anime?q=one&limit=4';
 
-let myToken = generateNewToken();
-console.log(myToken)
 const getAPI = async () => {
     const response = await fetch(api_url,{
         method:'GET',
