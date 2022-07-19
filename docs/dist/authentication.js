@@ -32,5 +32,7 @@ const getInside = async () => {
         mode: 'no-cors',
         client_id: CLIENT_ID,
     })
+    console.log(window)
 
 }
+
