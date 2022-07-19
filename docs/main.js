@@ -1,6 +1,7 @@
 //import from authentication.js
 import { getAuthentication } from "./dist/authentication.js";
 
+
 const api_url = 'https://api.myanimelist.net/v2/anime?q=one&limit=4';
 
 let myToken = getAuthentication();

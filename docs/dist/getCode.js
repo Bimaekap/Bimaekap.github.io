@@ -1,8 +1,17 @@
+// step 1
+
 export function getTokenInvoke() {
     return verifier;
 }
 
+//step 2
+export function getTokenInvoke_two() {
+    return verifier_step_two;
+}
+
 // STEP 1
+
+console.log('ini yang ke 2' + verifier_step_two)
 
 function dec2hex(dec) {
     return ('0' + dec.toString(16)).substr(-2)
@@ -41,3 +50,5 @@ async function generateCodeChallengeFromVerifier(v) {
     var base64encoded = base64urlencode(hashed);
     return base64encoded;
 }
+
+var verifier_step_two = generateCodeChallengeFromVerifier();
