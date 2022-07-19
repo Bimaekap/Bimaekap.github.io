@@ -24,16 +24,13 @@ let CLIENT_ID = client_code.theID;
 let CLIENT_SECRET = client_code.theSecretID;
 
 
-const data = {
-    'clien_id': CLIENT_ID,
-    'client_secret': CLIENT_SECRET,
-    'code_verifier': token(),
-    'grant_type': 'authorization_code'
-
-}
 
 const authorization_code = async () => {
     let response = await fetch(api_url_token, {
         mode: 'no-cors',
+        clien_id:CLIENT_ID,
+        client_secret:CLIENT_SECRET,
+        code_verifier:authorization_code,
+        grant_type:'authorization_code'
     },data)
 }
