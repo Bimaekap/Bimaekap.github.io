@@ -30,10 +30,5 @@ const getInside = async () => {
         mode: 'no-cors',
         client_id: CLIENT_ID,
     })
-    const data = response.text()
-    console.log(data)
-    return data
 
 }
-
-
