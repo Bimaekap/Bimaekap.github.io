@@ -20,5 +20,5 @@ const getAPI = async () => {
 
 // CALL API
 getAPI();
-token();
+generateNewToken();
 getAuthentication();

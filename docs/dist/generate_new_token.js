@@ -8,12 +8,17 @@ import {
 } from "./get_new_code_verifier.js";
 
 export function generateNewToken() {
-    return authorization_code();
+    return authorization();
 }
 
+
+import { allToken } from "./authentication.js";
+
+let code_verifier = allToken();
+console.log('dari generate new token' + code_verifier)
 // export 
 //url
-const api_url_token = 'https://myanimelist.net/v1/oauth2/authorize?token';
+const api_url_token = 'https://myanimelist.net/v1/oauth2/token';
 
 const client_code = {
     theID: '9e04967f457b1e0951e3faadc808a242',
@@ -23,14 +28,14 @@ const client_code = {
 let CLIENT_ID = client_code.theID;
 let CLIENT_SECRET = client_code.theSecretID;
 
-
-
-const authorization_code = async () => {
+const authorization = async (authorization_code) => {
     let response = await fetch(api_url_token, {
+        method:'POST',
         mode: 'no-cors',
         clien_id:CLIENT_ID,
         client_secret:CLIENT_SECRET,
-        code_verifier:authorization_code,
+        code: authorization_code ,
+        code_verifier: code_verifier,
         grant_type:'authorization_code'
-    },data)
+    })
 }

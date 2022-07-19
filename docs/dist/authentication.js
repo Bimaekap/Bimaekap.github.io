@@ -4,6 +4,9 @@ export function getAuthentication() {
     return getInside();
 }
 
+export function allToken() {{
+    return codeChallange;
+}}
 // import verifile code from get_new_code_verifier.js
 import {token} from "./get_new_code_verifier.js";
 
