@@ -13,7 +13,7 @@ export function generateNewToken() {
 
 // export 
 //url
-const api_url_token = 'https://myanimelist.net/v1/oauth2/token';
+const api_url_token = 'https://myanimelist.net/v1/oauth2/authorize?token';
 
 const client_code = {
     theID: '9e04967f457b1e0951e3faadc808a242',
@@ -27,7 +27,6 @@ let CLIENT_SECRET = client_code.theSecretID;
 const data = {
     'clien_id': CLIENT_ID,
     'client_secret': CLIENT_SECRET,
-    'code': getAuthentication(),
     'code_verifier': token(),
     'grant_type': 'authorization_code'
 
