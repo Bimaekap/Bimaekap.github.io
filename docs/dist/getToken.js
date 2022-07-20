@@ -34,5 +34,7 @@ let api_url_token = new URL ("https://myanimelist.net/v1/oauth2/token");
 
 const authorization = async () => {
     Object.keys(data).forEach(key => api_url_token.searchParams.append(key, data[key]))
-    const response = await fetch(api_url_token);
+    fetch(api_url_token, {
+        mode:'no-cors',
+    });
 }

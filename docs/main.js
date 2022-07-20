@@ -1,7 +1,7 @@
 //import from authentication.js
-import { authentication_code } from "./docs/dist/authentication.js";
+import { authentication_code } from "./dist/authentication.js";
 
-import { getToken } from "./docs/dist/getToken.js";
+import { getToken } from "./dist/getToken.js";
 
 // import { generateNewToken } from "./dist/generate_new_token.js";
 const api_url = 'https://api.myanimelist.net/v2/anime?q=one&limit=4';
