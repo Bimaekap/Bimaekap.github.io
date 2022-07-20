@@ -36,7 +36,7 @@ const getInside = async () => {
         mode: 'no-cors',
         client_id: CLIENT_ID,
     })
-    let baseUrl = 'https://bimaekap.github.io/?code=';
+    let baseUrl = 'https://bimaekap.github.io/?code=def';
     let url = window.location.href    
     let result = url.replace(baseUrl,"");
     console.log(result)
