@@ -28,9 +28,8 @@ console.log(code_challenge)
 const getAuthentication = async () => {
     const response = await fetch(api_authentication, {
         mode: 'no-cors',
-        client_id: CLIENT_ID,
     })
-    console.log(`authorize by clicking here + ${window.location.href}`)
+    console.log(window.document.body.baseURI)
 
     return response
 }
