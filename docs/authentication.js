@@ -68,6 +68,7 @@ const url_token = `https://myanimelist.net/v1/oauth2/token`
 async function getToken() {
     const response = await fetch(url_token, {
         mode: "no-cors",
+        method:'POST'
     },{
         data_get_token
     })
