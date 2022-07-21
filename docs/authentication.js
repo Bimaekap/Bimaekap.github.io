@@ -31,7 +31,7 @@ const data_authentication = {
     response_type: 'code',
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
-    state: 'http://127.0.0.1:5500/docs/index.html',
+    state: 'https://bimaekap.github.io/',
     redirect_uri: 'https://bimaekap.github.io/',
     code_challange: codeChallange,
     code_challange_method: 'plain'
