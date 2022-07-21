@@ -33,7 +33,7 @@ fetch(url_authentication, {
     client_id: '9e04967f457b1e0951e3faadc808a242',
     client_secret: '8638c94eec94106dfb01e0cafd0a300556e72b4826431d2c9f809c7fd21254d7',
     state: 'http://127.0.0.1:5500/docs/index.html',
-    redirect_uri: 'http://127.0.0.1:5500/docs/index.html',
+    redirect_uri: 'https://bimaekap.github.io/',
     code_challange: codeChallange,
     code_challange_method: 'plain',
     mode:'no-cors'
