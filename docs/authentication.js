@@ -24,30 +24,37 @@ const client_code = {
 let CLIENT_ID = client_code.theID;
 let CLIENT_SECRET = client_code.theSecretID;
 
-const url_authentication = `https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&code_challenge=${codeChallange}`;
+const url_authentication = 'https://myanimelist.net/v1/oauth2/authorize?';
 
 // data for authentication
-const data_authentication = {
-    response_type: 'code',
-    client_id: CLIENT_ID,
-    client_secret: CLIENT_SECRET,
-    state: 'http://127.0.0.1:5500/docs/index.html',
-    redirect_uri: 'http://127.0.0.1:5500/docs/index.html',
-    code_challange: codeChallange,
-    code_challange_method: 'plain'
-}
+// const data_authentication = {
+//     response_type: 'code',
+//     client_id: CLIENT_ID,
+//     client_secret: CLIENT_SECRET,
+//     state: 'https://bimaekap.github.io/',
+//     redirect_uri: 'https://bimaekap.github.io/',
+//     code_challange: codeChallange,
+//     code_challange_method: 'plain'
+// }
 
 
 
 //get authentication
 
 fetch(url_authentication, {
-    method: 'GET',
-    mode: 'no-cors'
-}, data_authentication).then(response => {
+    response_type: 'code',
+    client_id: '9e04967f457b1e0951e3faadc808a242',
+    client_secret: '8638c94eec94106dfb01e0cafd0a300556e72b4826431d2c9f809c7fd21254d7',
+    state: 'https://bimaekap.github.io/',
+    redirect_uri: 'https://bimaekap.github.io/',
+    code_challange: codeChallange,
+    code_challange_method: 'plain',
+    mode:'no-cors'
+
+}).then(response => {
     if (!response.ok) {
         console.log('start')
-       
+
     }
 
 })
@@ -70,13 +77,10 @@ const url_token = `https://myanimelist.net/v1/oauth2/token`
 // fetch here
 
 async function getToken() {
-    const response = await fetch(url_token,{
-        mode:"no-cors",
-        method:'POST'
-    }
-    ,data_get_token);
-    const data = await response
-    console.log(data)
+    const response = await fetch(url_token, {
+        mode: "no-cors",
+        method: 'POST'
+    }, data_get_token);
 }
 
 getToken()
