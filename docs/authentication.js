@@ -24,21 +24,22 @@ const client_code = {
 let CLIENT_ID = client_code.theID;
 let CLIENT_SECRET = client_code.theSecretID;
 
-const url_authentication = `https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&code_challenge=${codeChallange}`;
+const url_authentication = 'https://myanimelist.net/v1/oauth2/authorize?';
 
 //get authentication
 
 fetch(url_authentication, {
-    method:'GET',
-    response_type: 'code',
-    client_id: '9e04967f457b1e0951e3faadc808a242',
-    client_secret: '8638c94eec94106dfb01e0cafd0a300556e72b4826431d2c9f809c7fd21254d7',
-    state: 'https://bimaekap.github.io/',
-    redirect_uri: 'https://bimaekap.github.io/',
-    code_challange: codeChallange,
-    code_challange_method: 'plain',
-    mode:'no-cors'
-
+    method: 'GET',
+    headers: new Headers({
+        response_type: 'code',
+        client_id: '9e04967f457b1e0951e3faadc808a242',
+        client_secret: '8638c94eec94106dfb01e0cafd0a300556e72b4826431d2c9f809c7fd21254d7',
+        state: 'https://bimaekap.github.io/',
+        redirect_uri: 'https://bimaekap.github.io/',
+        code_challange: codeChallange,
+        code_challange_method: 'plain',
+        mode: 'no-cors'
+    })
 }).then(response => {
     if (!response.ok) {
         console.log(codeChallange)
@@ -56,7 +57,7 @@ let data_get_token = {
     'client_id': CLIENT_ID,
     'client_secret': CLIENT_SECRET,
     'grant_type': authorization_code,
-    'code':authorization_code,
+    'code': authorization_code,
     "redirect_uri": 'https://bimaekap.github.io/',
     'code_verifier': codeChallange
 }
@@ -67,8 +68,8 @@ const url_token = `https://myanimelist.net/v1/oauth2/token`
 
 async function getToken() {
     const response = await fetch(url_token, {
-        method:'POST',
-    },{
+        method: 'POST',
+    }, {
         data_get_token
     })
 }
