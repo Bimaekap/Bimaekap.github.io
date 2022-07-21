@@ -47,23 +47,25 @@ fetch(url_authentication, {
 }, data_authentication).then(response => {
     if (!response.ok) {
         console.log('start')
-        let url = window.location.search
-        console.log(url)
+       
     }
 
 })
+
+let url = window.location.search
+console.log(url)
 //store authorazitation
 
 // data for get Token
 let data_get_token = {
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
-    grant_type: 'authorization_code',
+    grant_type: url,
     redirect_uri: 'https://bimaekap.github.io/',
     code_verifier: codeChallange,
 }
 
-const url_token = 'https://myanimelist.net/v1/oauth2/authorize?token'
+const url_token = `https://myanimelist.net/v1/oauth2/authorize?token&${url}&client_id${CLIENT_ID}&${CLIENT_SECRET}`
 
 // fetch here
 
