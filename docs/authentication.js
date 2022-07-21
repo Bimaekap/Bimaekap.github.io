@@ -31,8 +31,8 @@ const data_authentication = {
     response_type: 'code',
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
-    state: 'https://bimaekap.github.io/',
-    redirect_uri: 'https://bimaekap.github.io/',
+    state: 'http://127.0.0.1:5500/docs/index.html',
+    redirect_uri: 'http://127.0.0.1:5500/docs/index.html',
     code_challange: codeChallange,
     code_challange_method: 'plain'
 }
@@ -61,7 +61,7 @@ let data_get_token = {
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
     grant_type: 'authorization_code',
-    redirect_uri: 'http://127.0.0.1:5500/docs/index.html',
+    redirect_uri: 'https://bimaekap.github.io/',
     code_verifier: codeChallange,
 }
 
