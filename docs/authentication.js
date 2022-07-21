@@ -65,7 +65,7 @@ let data_get_token = {
     code_verifier: codeChallange,
 }
 
-const url_token = `https://myanimelist.net/v1/oauth2/authorize?token&${url}&client_id${CLIENT_ID}&${CLIENT_SECRET}`
+const url_token = `https://myanimelist.net/v1/oauth2/token&${url}&client_id${CLIENT_ID}&${CLIENT_SECRET}`
 
 // fetch here
 
