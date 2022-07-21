@@ -26,19 +26,6 @@ let CLIENT_SECRET = client_code.theSecretID;
 
 const url_authentication = `https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&code_challenge=${codeChallange}`;
 
-// data for authentication
-// const data_authentication = {
-//     response_type: 'code',
-//     client_id: CLIENT_ID,
-//     client_secret: CLIENT_SECRET,
-//     state: 'https://bimaekap.github.io/',
-//     redirect_uri: 'https://bimaekap.github.io/',
-//     code_challange: codeChallange,
-//     code_challange_method: 'plain'
-// }
-
-
-
 //get authentication
 
 fetch(url_authentication, {
@@ -61,7 +48,6 @@ fetch(url_authentication, {
 
 
 let authorization_code = window.location.search
-console.log(url)
 //store authorazitation
 
 // data for get Token
@@ -69,7 +55,7 @@ let data_get_token = {
     'client_id': CLIENT_ID,
     'client_secret': CLIENT_SECRET,
     'grant_type': authorization_code,
-    'code':authoriation_code,
+    'code':authorization_code,
     "redirect_uri": 'https://bimaekap.github.io/',
     'code_verifier': codeChallange
 }
