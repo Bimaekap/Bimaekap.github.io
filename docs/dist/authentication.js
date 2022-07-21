@@ -40,6 +40,7 @@ const data_authentication = {
 // data for get Token
 let data_get_token = {
     client_id: CLIENT_ID,
+    client_secret:CLIENT_SECRET,
     grant_type: 'authorization_code',
     redirect_uri: 'https://bimaekap.github.io/',
     code_verifier: codeChallange,
@@ -55,11 +56,11 @@ function authentication() {
             if (!response.ok) {
                 // get Token from codeback URI
                 let authorization_code_url = window.location.search
-
+                console.log(authorization_code_url)
                 // delete ?code= text
                 let authorization_code = new URLSearchParams(authorization_code_url)
                 authorization_code.delete('code=')
-
+                console.log()
                 console.log(`this the code for get token ${authorization_code}`);
                 fetch(url_token, {
                     mode: 'no-cors',
