@@ -55,7 +55,7 @@ function authentication() {
         }, data_authentication).then(response => {
             if (!response.ok) {
                 // get Token from codeback URI
-                let authorization_code = window.location.href
+                let authorization_code =window.location.search
                 // delete ?code= text
                 authorization_code.replace('code=','');
              
