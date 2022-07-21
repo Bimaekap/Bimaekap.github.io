@@ -60,7 +60,10 @@ function authentication() {
                 // delete ?code= text
                 let authorization_code = new URLSearchParams(authorization_code_url)
                 authorization_code.delete('code=')
-                console.log()
+                let newUrl = authorization_code;
+                console.log(newUrl)
+                
+            
                 console.log(`this the code for get token ${authorization_code}`);
                 fetch(url_token, {
                     mode: 'no-cors',
