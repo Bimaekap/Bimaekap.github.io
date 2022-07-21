@@ -60,8 +60,8 @@ console.log(url)
 let data_get_token = {
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
-    grant_type: url,
-    redirect_uri: 'https://bimaekap.github.io/',
+    grant_type: 'authorization_code',
+    redirect_uri: 'http://127.0.0.1:5500/docs/index.html',
     code_verifier: codeChallange,
 }
 
