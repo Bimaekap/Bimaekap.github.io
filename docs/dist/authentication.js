@@ -54,12 +54,12 @@ function authentication() {
         }, data_authentication).then(response => {
             if (!response.ok) {
                 // get Token from codeback URI
-                let authorization_code_url = new URL (window.location.search)
+                let authorization_code_url = window.location.search
 
                 // delete ?code= text
                 let authorization_code = new URLSearchParams(authorization_code_url)
                 authorization_code.delete('code=')
-                
+
                 console.log(`this the code for get token ${authorization_code}`);
                 fetch(url_token, {
                     mode: 'no-cors',
