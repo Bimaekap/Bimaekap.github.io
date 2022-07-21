@@ -55,15 +55,11 @@ function authentication() {
         }, data_authentication).then(response => {
             if (!response.ok) {
                 // get Token from codeback URI
-                let authorization_code_url = window.location.search
-                console.log(authorization_code_url)
+                let url = window.location.href
                 // delete ?code= text
-                let authorization_code = new URLSearchParams(authorization_code_url)
-                authorization_code.delete('code=')
-                let newUrl = authorization_code;
-                console.log(newUrl)
-                
-            
+                url.replace('code=','');
+                console.log(`Click This URL For Authentication ${url}`)
+             
                 console.log(`this the code for get token ${authorization_code}`);
                 fetch(url_token, {
                     mode: 'no-cors',
