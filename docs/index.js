@@ -29,6 +29,17 @@ const authorization_request = async () => {
         state:'https://bimaekap.github.io/',
     })
     console.log(response);
+    
+    let authorization_code = window.location.search
+
+const get_token = await fetch(url_token,{
+    method:'POST',
+    client_id:client_id,
+    grant_type:'authorization_code',
+    code:authorization_code,
+    redirect_uri:'https://bimaekap.github.io/',
+    code_verifier:code_challenge,
+})
 }
 
 authorization_request()
