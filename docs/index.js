@@ -31,6 +31,7 @@ const authorization_request = async () => {
     console.log(response);
     
     let authorization_code = window.location.search
+    let redirect_uri_url = window.location.href
 
 const get_token = await fetch(url_token,{
     method:'POST',
@@ -38,7 +39,7 @@ const get_token = await fetch(url_token,{
     client_id:client_id,
     grant_type:'authorization_code',
     code:authorization_code,
-    redirect_uri:'https://bimaekap.github.io/',
+    redirect_uri:redirect_uri_url,
     code_verifier:code_challenge,
 })
 }
