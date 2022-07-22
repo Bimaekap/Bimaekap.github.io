@@ -36,15 +36,13 @@ const authorization_request = async () => {
     let redirect_uri_url = window.location.href
 
     const get_token = await fetch(url_token, {
-        method: 'POST',
         mode: 'no-cors',
         client_id: client_id,
         grant_type: 'authorization_code',
         code: authorization_code,
-        redirect_uri: redirect_uri_url,
         code_verifier: code_challenge,
         headers: new Headers({
-            'Host': 'https://bimaekap.github.io/',
+            'Host': 'http://127.0.0.1:5500/docs/index.html',
             'Content-Type': 'application/json',
             'authorization':`Basic ${authorization_code}`
         })
