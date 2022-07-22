@@ -36,21 +36,22 @@ const authorization_request = async () => {
     let redirect_uri_url = window.location.href
 
     const get_token = await fetch(url_token, {
-            method: 'POST',
-            mode: 'no-cors',
-            client_id: client_id,
-            grant_type: 'authorization_code',
-            code: authorization_code,
-            redirect_uri: redirect_uri_url,
-            code_verifier: code_challenge,
-            headers:new Headers({
-                'host':'https://bimaekap.github.io/',
-                'Content-Type':'application/json'
-            })
+        method: 'POST',
+        mode: 'no-cors',
+        client_id: client_id,
+        grant_type: 'authorization_code',
+        code: authorization_code,
+        redirect_uri: redirect_uri_url,
+        code_verifier: code_challenge,
+        headers: new Headers({
+            'Host': 'https://bimaekap.github.io/',
+            'Content-Type': 'application/json',
+            'authorization':`Basic ${authorization_code}`
         })
-        .then((response) => {
-            console.log(response.headers)
-        })
+    }).then(response => {
+        console.log(response.body)
+    })
 }
+
 
 authorization_request()
