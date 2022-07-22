@@ -37,7 +37,7 @@ const authorization_request = async () => {
 
     const get_token = await fetch(url_token, {
             method: 'POST',
-            // mode: 'no-cors',
+            mode: 'no-cors',
             client_id: client_id,
             grant_type: 'authorization_code',
             code: authorization_code,
