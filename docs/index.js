@@ -1,4 +1,4 @@
-let url_token = 'https://myanimelist.net/v1/oauth2/token$' // POST
+// let url_token = 'https://myanimelis\t.net/v1/oauth2/token$' // POST
 
 let client_id = '9e04967f457b1e0951e3faadc808a242';
 let client_secret = '8638c94eec94106dfb01e0cafd0a300556e72b4826431d2c9f809c7fd21254d7'
