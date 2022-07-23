@@ -35,7 +35,6 @@ const authorization_request = async () => {
 
     let url = window.location.search
     console.log(url)
-    let authorization_code = removeParam("?", url)
 
     function removeParam(key, sourceURL) {
         var rtn = sourceURL.split("?")[0],
@@ -71,6 +70,8 @@ const authorization_request = async () => {
         })
     }
     get_token()
+
+    let authorization_code = removeParam("?", url)
 
 }
 
