@@ -32,11 +32,13 @@ const authorization_request = async () => {
     })
     console.log(response.json);
 
-    let authorization_code = window.location.url
-    console.log(authorization_code)
+
+    let url = window.location.search
+    console.log(url)
+    let authorization_code = removeParam("?", url)
 
     function removeParam(key, sourceURL) {
-        var authorization_code = sourceURL.split("?")[0],
+        var rtn = sourceURL.split("?")[0],
             param,
             params_arr = [],
             queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
@@ -48,12 +50,12 @@ const authorization_request = async () => {
                     params_arr.splice(i, 1);
                 }
             }
-            if (params_arr.length) authorization_code = authorization_code + "?" + params_arr.join("&");
+            if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
         }
-        return authorization_code;
+        return rtn;
     }
 
-    let url_token = `https://myanimelist.net/v1/oauth2/token&${authorization_code}`
+    let url_token = `https://myanimelist.net/v1/oauth2/token${authorization_code}`
     console.log(url_token)
     const get_token = async () => {
         await fetch(url_token, {
