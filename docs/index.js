@@ -32,8 +32,26 @@ const authorization_request = async () => {
     })
     console.log(response.json);
 
-    let authorization_code = window.location.search
+    let authorization_code = window.location.url
     console.log(authorization_code)
+
+    function removeParam(key, sourceURL) {
+        var authorization_code = sourceURL.split("?")[0],
+            param,
+            params_arr = [],
+            queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+        if (queryString !== "") {
+            params_arr = queryString.split("&");
+            for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+                param = params_arr[i].split("=")[0];
+                if (param === key) {
+                    params_arr.splice(i, 1);
+                }
+            }
+            if (params_arr.length) authorization_code = authorization_code + "?" + params_arr.join("&");
+        }
+        return authorization_code;
+    }
 
     let url_token = `https://myanimelist.net/v1/oauth2/token&${authorization_code}`
     console.log(url_token)
