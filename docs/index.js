@@ -53,6 +53,7 @@ const authorization_request = async () => {
         }
         return rtn;
     }
+    let authorization_code = removeParam("?", url)
 
     let url_token = `https://myanimelist.net/v1/oauth2/token${authorization_code}`
     console.log(url_token)
@@ -71,7 +72,6 @@ const authorization_request = async () => {
     }
     get_token()
 
-    let authorization_code = removeParam("?", url)
 
 }
 
