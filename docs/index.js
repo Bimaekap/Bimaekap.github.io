@@ -36,11 +36,13 @@ const authorization_request = async () => {
     console.log(authorization_code)
 
     await fetch(url_token, {
+        method:'POST',
         client_id: client_id,
         client_secret: client_secret,
         code: authorization_code,
         code_verifier: code_challenge,
         grant_type: "authorization_code",
+        mode:'no-cors',
     }).then(response => {
         if (response.status === 200)
             console.log('ready')
