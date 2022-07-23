@@ -34,26 +34,30 @@ const authorization_request = async () => {
 
 
     let url = window.location.search
+
     console.log(url)
 
-    function removeParam(key, sourceURL) {
-        var rtn = sourceURL.split("?")[0],
-            param,
-            params_arr = [],
-            queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
-        if (queryString !== "") {
-            params_arr = queryString.split("&");
-            for (var i = params_arr.length - 1; i >= 0; i -= 1) {
-                param = params_arr[i].split("=")[0];
-                if (param === key) {
-                    params_arr.splice(i, 1);
+    function removeURLParameter(url, parameter) {
+        //prefer to use l.search if you have a location/link object
+        var urlparts = url.split('?');
+        if (urlparts.length >= 2) {
+
+            var prefix = encodeURIComponent(parameter) + '=';
+            var pars = urlparts[1].split(/[&;]/g);
+
+            //reverse iteration as may be destructive
+            for (var i = pars.length; i-- > 0;) {
+                //idiom for string.startsWith
+                if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                    pars.splice(i, 1);
                 }
             }
-            if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
+
+            return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
         }
-        return rtn;
+        return url;
     }
-    let authorization_code = removeParam("?", url)
+    let authorization_code = removeURLParameter(url, "?")
 
     let url_token = `https://myanimelist.net/v1/oauth2/token${authorization_code}`
     console.log(url_token)
