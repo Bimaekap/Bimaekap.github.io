@@ -1,4 +1,4 @@
-let url_token = 'https://myanimelist.net/v1/oauth2/token' // POST
+let url_token = 'https://myanimelist.net/v1/oauth2/token$' // POST
 
 let client_id = '9e04967f457b1e0951e3faadc808a242';
 let client_secret = '8638c94eec94106dfb01e0cafd0a300556e72b4826431d2c9f809c7fd21254d7'
@@ -30,23 +30,28 @@ const authorization_request = async () => {
         code_chalenge: code_challenge,
         state: 'https://bimaekap.github.io/',
     })
-    console.log(response);
+    console.log(response.json);
 
     let authorization_code = window.location.search
     console.log(authorization_code)
 
-    await fetch(url_token, {
-        method:'POST',
-        client_id: client_id,
-        client_secret: client_secret,
-        code: authorization_code,
-        code_verifier: code_challenge,
-        grant_type: "authorization_code",
-        mode:'no-cors',
-    }).then(response => {
-        if (response.status === 200)
-            console.log('ready')
-    })
+    let url_token = `https://myanimelist.net/v1/oauth2/token&${authorization_code}`
+    console.log(url_token)
+    const get_token = async () => {
+        await fetch(url_token, {
+            method: 'POST',
+            client_id: client_id,
+            client_secret: client_secret,
+            code_verifier: code_challenge,
+            grant_type: "authorization_code",
+            mode: 'no-cors',
+        }).then(response => {
+            if (response.status === 200)
+                console.log('ready')
+        })
+    }
+    get_token()
+
 }
 
 
