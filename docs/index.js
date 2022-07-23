@@ -33,21 +33,17 @@ const authorization_request = async () => {
     console.log(response);
 
     let authorization_code = window.location.search
-    let redirect_uri_url = window.location.href
+    console.log(authorization_code)
 
-    const get_token = await fetch(url_token, {
-        mode: 'no-cors',
+    await fetch(url_token, {
         client_id: client_id,
-        grant_type: 'authorization_code',
+        client_secret: client_secret,
         code: authorization_code,
         code_verifier: code_challenge,
-        headers: new Headers({
-            'Host': 'http://127.0.0.1:5500/docs/index.html',
-            'Content-Type': 'application/json',
-            'authorization':`Basic ${authorization_code}`
-        })
+        grant_type: "authorization_code",
     }).then(response => {
-        console.log(response.body)
+        if (response.status === 200)
+            console.log('ready')
     })
 }
 
