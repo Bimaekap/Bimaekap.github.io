@@ -38,7 +38,7 @@ const authorization_request = async () => {
             'response_type':'code'
         })
         .then(Response => {
-            console.log(Response)
+            console.log(Request.body)
             if (Response.status === 303 ) {
                 fetch(url_token, {
                         method: "POST",
