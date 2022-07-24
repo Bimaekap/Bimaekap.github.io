@@ -25,8 +25,7 @@ const authorization_request = async () => {
     const response = await fetch(url_authentication, {
         method:'get',
         mode: 'no-cors',
-        body: dataAuthen,
-    })
+    },dataAuthen)
 
    
 
@@ -45,9 +44,8 @@ const authorization_request = async () => {
     const get_token = async () => {
         await fetch(url_token, {
             method: 'POST',
-            body: data,
             mode: 'no-cors',
-        })
+        },data)
     }
     get_token()
 
