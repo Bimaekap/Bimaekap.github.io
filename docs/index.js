@@ -57,7 +57,7 @@ const authorization_request = async () => {
         }
         return url;
     }
-    let authorization_code = removeURLParameter(url, "?")
+    let authorization_code = removeURLParameter(url, "code=")
 
     let url_token = `https://myanimelist.net/v1/oauth2/token${authorization_code}`
     console.log(url_token)
@@ -71,7 +71,7 @@ const authorization_request = async () => {
             mode: 'no-cors',
         }).then(response => {
             if (response.status === 200)
-                console.log('ready')
+                console.log(response.json())
         })
     }
     get_token()
