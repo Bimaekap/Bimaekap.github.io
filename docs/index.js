@@ -33,7 +33,10 @@ const dataAuthen = {
 const authorization_request = async () => {
     const response = await fetch(url_authentication, {
             method: 'get',
-            mode: 'no-cors'
+            mode: 'no-cors',
+            headers: new Headers({
+                'Content-Type':'application/json'
+            })
         },{
             'response_type':'code'
         })
