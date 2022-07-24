@@ -36,8 +36,9 @@ const authorization_request = async () => {
         grant_type: "authorization_code",
     }
 
-    let authorization_code = new URLSearchParams(window.location.search)
-    let theAnswer = authorization_code.values()
+    let url = new URLSearchParams(window.location.search)
+    let authorization_code = url
+    let theAnswer = authorization_code.values
     console.log(theAnswer)
 
     let url_token = `https://myanimelist.net/v1/oauth2/token&code=${theAnswer}` // POST
