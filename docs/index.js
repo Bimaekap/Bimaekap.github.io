@@ -66,6 +66,8 @@ const authorization_request = async () => {
         code_verifier: code_challenge,
         grant_type: "authorization_code",
     }
+
+    console.log(data.code)
     let url_token = 'https://myanimelist.net/v1/oauth2/token' // POST
     console.log(url_token)
     const get_token = async () => {
