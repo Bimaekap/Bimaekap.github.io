@@ -47,8 +47,6 @@ const authorization_request = async () => {
             method: 'POST',
             body: data,
             mode: 'no-cors',
-        }).then(response => {
-            console.log(response.json())
         })
     }
     get_token()
