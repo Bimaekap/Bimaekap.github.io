@@ -30,19 +30,25 @@ const dataAuthen = {
     state: 'https://bimaekap.github.io/',
 }
 
+function sum() {
+    var arr = Array.from(arguments);
+
+    return arr.reduce(function (total, x) {
+        return total + x;
+    }, 0)
+}
+
 const authorization_request = async () => {
     const response = await fetch(url_authentication, {
             method: 'get',
             mode: 'no-cors',
             headers: new Headers({
-                'Content-Type':'application/json'
-            })
-        },{
-            'response_type':'code'
-        })
+                'Content-Type': 'application/json'
+            }),
+        }, sum(dataAuthen))
         .then(Response => {
             console.log(Request.body)
-            if (Response.status === 303 ) {
+            if (Response.status === 303) {
                 fetch(url_token, {
                         method: "POST",
                         mode: 'no-cors'
