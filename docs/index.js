@@ -59,11 +59,12 @@ const authorization_request = async () => {
     }
     let authorization_code = removeURLParameter(url, "code=")
 
-    let url_token = `https://myanimelist.net/v1/oauth2/token${authorization_code}`
+    let url_token = 'https://myanimelist.net/v1/oauth2/token' // POST
     console.log(url_token)
     const get_token = async () => {
         await fetch(url_token, {
             method: 'POST',
+            code:authorization_code,
             client_id: client_id,
             client_secret: client_secret,
             code_verifier: code_challenge,
