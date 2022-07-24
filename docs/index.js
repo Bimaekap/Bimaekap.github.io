@@ -36,7 +36,8 @@ const authorization_request = async () => {
             mode: 'no-cors'
         }, dataAuthen)
         .then(Response => {
-            if (response.status === 303) {
+            console.log(Response)
+            if (Response.status === 303) {
                 fetch(url_token, {
                         method: "POST",
                         mode: 'no-cors'
