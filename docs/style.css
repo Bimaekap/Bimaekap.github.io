@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*  */
+#header-ctn {
+    width: 100%;
+    height: 10vh;
+    background-color: #000000;
+    padding: 1em 4em;
+    display: inline-block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header-display-inline{
+    display: inline;
+}
+
+.judul{
+    color:#ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    display: inline;
+}
+
+#nav-ctn{
+    display: inline;
+    position: absolute;
+    right:1px;
+    padding: 0.5em 4em;
+}
+
+.link-nav {
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif; ;
+    color: #ffffff;
+    margin: 0 2em;
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+.link-nav:hover{
+    color: #747272;
+}
+
+#article-one{
+    margin: 7em 4em;
+
+}
+
+.text-para {
+    font-family: 'Poppins', sans-serif;;
+}
+.text {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.text-one {
+    font-size: 48px ;
+}
+
+.text-two{
+    font-size: 68px;
+    position: relative;
+    left: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+#article-one{
+    display: flex;
+}
+
+.img-ctn{
+    /* display: flex; */
+    position: absolute;
+    left: 60em;
+}
+
+.img {
+    width: 80%;
+}
+
+.text-explanation{
+    margin: 3em 0;
+    width: 45vw;
+    font-size: 1.5em;
+}
+
+.btn{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: white;
+    border-radius: 1em;
+    cursor: pointer;
+    padding: 0.5em 0.5em;
+    background-color: #E1E1E1 ;
+    color: #747272 ;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #a8a8a8;
+    padding: 1em 0;
+}
+
+.btn a:hover{
+    color: #454444;
+}
+/*  */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in{
+        opacity:0;  /* make things invisible upon start */
+        -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation:fadeIn ease-in 1;
+        animation:fadeIn ease-in 1;
+    
+        -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+    
+        -webkit-animation-duration:1s;
+        -moz-animation-duration:1s;
+        animation-duration:1s;
+}
+
+.fade-in.one{
+    -webkit-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+.fade-in.two{
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay:1.2s;
+    animation-delay: 1.2s;
+}
+
+.fade-in.three {
+    -webkit-animation-delay: 1.6s;
+    -moz-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+}
+
+.btn:hover{
+    background-color: #a8a8a8;
+    color: #454444;
+}
+
+/* CONTENT ONE */
+
+#content-one{
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    padding: 0em 25em 1em 25em;
+    position: relative;
+    
+}
+
+.text-content-one{
+    color:rgb(207, 207, 207);
+    font-size:1.5em;
+    padding: 2em 0 1em 0;
+}
+
+.list{
+    margin: 1em 0 0.5em 0;
+    color: rgb(207, 207, 207);
+    transition: 0.3s;
+}
+
+.list:hover{
+    color: #ffffff;
+}
+.para-one {
+    color: rgb(207, 207, 207);
+    width: 100%;
+    margin: 2em 0;
+    text-align: left;
+}
+
+.logo-bahasa-pemrograman {
+    width: 20%;
+    margin: 1em 4em;
+    display: flex;
+}
+
+.para-ctn-one{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.ctn-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-flexbox{
+    text-align: center;
+    border: #ffffff;
+    border-radius: 5px;
+    /* background-color: #a8a8a8; */
+}
+
+.footer{
+    /* width: 100vw; */
+    height: 10vh;
+    /* height: 10vh; */
+    background-color: #747272;
+}
+
+.css-logo{
+    width: 13%;
+    margin-right: 5.8em;
+}
+
+.hmtl-logo{
+    margin-right: 12em;
+}
+
+#footer{
+    width: auto ;
+    height: 10vh;
+    background-color: #ffffff;
+}
+
+.box-logo{
+    justify-content: center;
+    text-align: center;
+    /* margin: 10px 0 10px 0; */
+    padding: 25px 0;
+}
+
+.box-logo a{
+    text-decoration: none;
+}
+.logo{
+    width: 2.1%;
+    margin: 0 1em;
+    transition: 0.3s;
+    /* animation-duration: 1s; */
+}
+
+.link-logo{
+    transition: 0.3s;
+}
+.logo:hover{
+    position: relative;
+    /* top: 10px; */
+}
+
+.link-logo:hover{
+    padding: 10px;
+}
