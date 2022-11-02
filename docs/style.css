@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box ;
+    margin: 0;
+}
+
+#header{
+    width: 100vw;
+    height: auto;
+    background-color: #151414;
+}
+
+#container-first-header {
+    margin: 0 4em 0 0;
+}
+
+.logo {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    padding: 0.5em 0 ;
+}
+
+
+
+.flex {
+    display: flex;
+    padding-bottom: 5em;
+    padding-left: 4em;
+}
+
+.nav-list{
+    margin: 1.4em
+}
+
+/* ---------------------------- */
+
+.container-gambar{
+    display: flex;
+}
+
+.a-remove-style {
+    text-decoration: none;
+    color: white;
+}
+
+.a-remove-style:hover {
+    color: #FFD481;
+}
+.img-senter {
+    width: 25%;
+    margin: 0 7em 0 7em;
+}
+.nav-list > li {
+    color: white;
+    margin: 1.5em;
+    list-style: none;
+    display: inline;
+    font-weight: 100;
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-flex {
+    display: flex;
+}
+.teks-header {
+    color: white;
+    font-weight: 100;
+    font-size: 5em;
+    width: 40%;
+    font-family: 'Oswald', sans-serif;
+    /* margin-bottom: 0.5em; */
+    line-height: 1.3em;
+}
+
+.isi-teks-konten {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 200;
+    width: 25%;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1em;
+    margin-bottom: 2em;
+}
+
+#container-header {
+    margin-left: 4em;
+}
+
+.btn-header {
+    width: 120px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #FFD481;
+    font-weight: bolder;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.btn-header:hover {
+    background-color: #fff;
+}
